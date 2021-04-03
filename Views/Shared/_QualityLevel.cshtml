@@ -1,0 +1,82 @@
+﻿@model MeasuringStation
+
+
+
+@if (Model.AirQualityIndex.So2IndexLevel != null)
+{
+    <tr>
+        <td>Dwutlenek siarki</td>
+        <td>SO2</td>
+        <td style="background-color: @(Model.AirQualityIndex.So2IndexLevel.Id > 2 ? "Tomato" :
+                                            ((Model.AirQualityIndex.So2IndexLevel.Id) < 2 ? "LightGreen" : "DarkOrange"))">
+            @Model.AirQualityIndex.So2IndexLevel.IndexLevelName
+        </td>
+    </tr>
+}
+@if (Model.AirQualityIndex.No2IndexLevel != null)
+{
+    <tr>
+        <td>Dwutlenek azotu</td>
+        <td>NO2</td>
+        <td style="background-color: @(Model.AirQualityIndex.No2IndexLevel.Id > 2 ? "Tomato" :
+                                            ((Model.AirQualityIndex.No2IndexLevel.Id) < 2 ? "LightGreen" : "DarkOrange"))">
+            @Model.AirQualityIndex.No2IndexLevel.IndexLevelName
+        </td>
+    </tr>
+}
+@if (Model.AirQualityIndex.CoIndexLevel != null)
+{
+    <tr>
+        <td>Tlenek węgla</td>
+        <td>CO</td>
+        <td style="background-color: @(Model.AirQualityIndex.CoIndexLevel.Id > 2 ? "Tomato" :
+                                            ((Model.AirQualityIndex.CoIndexLevel.Id) < 2 ? "LightGreen" : "DarkOrange"))">
+            @Model.AirQualityIndex.CoIndexLevel.IndexLevelName
+        </td>
+    </tr>
+}
+@if (Model.AirQualityIndex.Pm10IndexLevel != null)
+{
+    <tr>
+        <td>Pył zawieszony PM10</td>
+        <td>PM10</td>
+        <td style="background-color: @(Model.AirQualityIndex.Pm10IndexLevel.Id > 2 ? "Tomato" :
+                                            ((Model.AirQualityIndex.Pm10IndexLevel.Id) < 2 ? "LightGreen" : "DarkOrange"))">
+            @Model.AirQualityIndex.Pm10IndexLevel.IndexLevelName
+        </td>
+    </tr>
+}
+@if (Model.AirQualityIndex.Pm25IndexLevel != null)
+{
+    <tr>
+        <td>Pył zawieszony PM2.5</td>
+        <td>PM2.5</td>
+        <td style="background-color: @(Model.AirQualityIndex.Pm25IndexLevel.Id > 2 ? "Tomato" :
+                                            ((Model.AirQualityIndex.Pm25IndexLevel.Id) < 2 ? "LightGreen" : "DarkOrange"))">
+            @Model.AirQualityIndex.Pm25IndexLevel.IndexLevelName
+        </td>
+    </tr>
+}
+@if (Model.AirQualityIndex.O3IndexLevel != null)
+{
+    <tr>
+        <td>Ozon</td>
+        <td>O3</td>
+        <td style="background-color: @(Model.AirQualityIndex.O3IndexLevel.Id > 2 ? "Tomato" :
+                                            ((Model.AirQualityIndex.O3IndexLevel.Id) < 2 ? "LightGreen" : "DarkOrange"))">
+            @Model.AirQualityIndex.O3IndexLevel.IndexLevelName
+        </td>
+    </tr>
+}
+@if (Model.AirQualityIndex.C6H6IndexLevel != null)
+{
+
+    <tr>
+        <td>Benzen</td>
+        <td>C6H6</td>
+        <td style="background-color: @(Model.AirQualityIndex.C6H6IndexLevel.Id > 2 ? "Tomato" :
+                                            ((Model.AirQualityIndex.C6H6IndexLevel.Id) < 2 ? "LightGreen" : "DarkOrange"))">
+            @Model.AirQualityIndex.C6H6IndexLevel.IndexLevelName
+        </td>
+    </tr>
+}

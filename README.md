@@ -1,0 +1,1 @@
+Recruitment task to create Web Application that shows air quality in Poznan.

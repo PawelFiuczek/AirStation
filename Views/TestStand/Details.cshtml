@@ -1,0 +1,90 @@
+﻿@model MeasuringStation
+@{
+    ViewData["Title"] = "Szczegóły stacji";
+}
+
+
+<h1 class="text-center">Szczegóły stacji  @Model.StationName</h1>
+
+
+<div class="space">
+    <h4>Informacje o stacji</h4>
+
+</div>
+<div class="card">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Numer stacji</th>
+                <th scope="col">Nazwa stacji</th>
+                <th scope="col">Miasto</th>
+                <th scope="col">Adres</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.Id</td>
+                <td>@Model.StationName</td>
+                <td>@Model.City.Name</td>
+                <td>@Model.AddressStreet</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+<div class="space">
+    <h4>Lista stanowisk pomiarowych</h4>
+    <h5>W celu uzyskania szczegółowych danych pomiarowych na danym stanowisku prosimy wybrać numer stanowiska</h5>
+</div>
+<div class="card">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Numer stanowiska</th>
+                <th scope="col">Badany parametr</th>
+                <th scope="col">Symbol parametru</th>
+                <th scope="col">Numer parametru</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var testStand in Model.TestStands)
+            {
+
+                <tr>
+                    <td><a asp-controller="Data" asp-action="Data" asp-route-sensorId="@testStand.Id" asp-route-stationId="@testStand.StationId">@testStand.Id</a></td>
+
+                    <td>@testStand.Param.ParamName</td>
+                    <td>@testStand.Param.ParamFormula</td>
+                    <td>@testStand.Param.IdParam</td>
+                    <td></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+<div class="space">
+    <h4>Jakość mierzonych parametrów powietrza</h4>
+</div>
+<div class="card">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Nazwa parametru</th>
+                <th scope="col">Symbol parametru</th>
+                <th scope="col">Poziom jakości parametru</th>
+            </tr>
+        </thead>
+        <tbody>
+            <partial name="_QualityLevel" />
+        </tbody>
+    </table>
+</div>
+
+<div class="space">
+    <a class="btn btn-primary" asp-controller="Home" asp-action="Index">Wróć do listy stacji</a>
+</div>
+

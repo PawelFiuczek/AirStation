@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "";
+}
+@model List<MeasuringStation>
+
+<div class="text-center">
+    <h1 class="display-4">Witamy!</h1>
+    <h5 style="padding: 20px;">Prosimy wybrać jedną ze stacji z listy, aby uzyskać aktualne dane na temat jakości powietrza w Poznaniu.</h5>
+</div>
+
+
+<table class="table table-striped">
+    <thead>Lista stacji:</thead>
+    @foreach (var station in Model)
+    {
+        <tr>
+            <td>
+                <a asp-controller="TestStand" asp-action="Details" asp-route-stationId="@station.Id">@station.StationName</a>
+            </td>
+        </tr>
+    }
+</table>

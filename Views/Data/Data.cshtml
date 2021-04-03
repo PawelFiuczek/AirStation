@@ -1,0 +1,36 @@
+﻿@model MeasurementData
+@{
+    ViewData["Title"] = "Dane pomiarowe";
+}
+
+
+<h1 class="space text-center" >Dane pomiarowe dla parametru @Model.Key </h1>
+
+
+<div class="card">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Termin wykonania pomiaru [Data i godzina]</th>
+                <th scope="col">Wartość pomiaru [μg/m3]</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var value in Model.Values)
+            {
+                if (value.Value.HasValue)
+                {
+
+                <tr>
+                    <td>@value.Date</td>
+                    <td>@Decimal.Round(value.Value.Value, 2)</td>
+                </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="space">
+    <a asp-controller="TestStand" asp-action="Details" asp-route-stationId="@TempData["stationId"]" class="btn btn-primary">Powrót do stacji</a>
+</div>
