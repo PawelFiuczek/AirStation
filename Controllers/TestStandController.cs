@@ -1,32 +1,22 @@
 ﻿using AirStation.Services;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace AirStation.Controllers
 {
     public class TestStandController : Controller
     {
-        private readonly IHttpService httpService;
-        private readonly ITestStandService testStandService;
-        private readonly IStationService stationService;
-        private readonly IAirQualityService airQualityService;
+        private readonly IApiService apiService;
 
-        public TestStandController(IHttpService httpService,ITestStandService testStandService,
-                                    IStationService stationService, IAirQualityService airQualityService)
+        public TestStandController(IApiService apiService)
         {
-            this.httpService = httpService;
-            this.testStandService = testStandService;
-            this.stationService = stationService;
-            this.airQualityService = airQualityService;
+            this.apiService = apiService;
         }
         public async Task<IActionResult> Details(int stationId)
         {
-            var testStands = await testStandService.GetTestStandsAsync(stationId);
-            var measuringStation = await stationService.GetStationsByIdAsync(stationId);
-            var airQuality = await airQualityService.GetAirQualityAsync(stationId);
+            var measuringStation = await apiService.GetStationsByIdAsync(stationId);
+            var testStands = await apiService.GetTestStandsAsync(stationId);
+            var airQuality = await apiService.GetAirQualityAsync(stationId);
             measuringStation.TestStands = testStands;
             measuringStation.AirQualityIndex = airQuality;
             return View(measuringStation);

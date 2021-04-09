@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace AirStation.Models
+﻿namespace AirStation.Models
 {
     public class AirQualityIndex
     {
-        public int Id { get; set; }
-        public IndexLevel StIndexLevel { get; set; }
-
         public IndexLevel So2IndexLevel { get; set; }
 
         public IndexLevel No2IndexLevel { get; set; }

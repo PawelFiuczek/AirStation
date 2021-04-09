@@ -39,5 +39,4 @@ C:\Users\zelo9\Desktop\AirStation\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\zelo9\Desktop\AirStation\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\Users\zelo9\Desktop\AirStation\obj\Debug\netcoreapp3.1\Razor\Views\TestStand\Details.cshtml.g.cs
 C:\Users\zelo9\Desktop\AirStation\obj\Debug\netcoreapp3.1\Razor\Views\Data\Data.cshtml.g.cs
-C:\Users\zelo9\Desktop\AirStation\obj\Debug\netcoreapp3.1\Razor\Views\AirQuality\Quality.cshtml.g.cs
 C:\Users\zelo9\Desktop\AirStation\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_QualityLevel.cshtml.g.cs

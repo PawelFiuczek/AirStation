@@ -26,10 +26,7 @@ namespace AirStation
         {
             services.AddControllersWithViews();
             services.AddSingleton<IHttpService, HttpService>();
-            services.AddScoped<IStationService, StationService>();
-            services.AddScoped<ITestStandService, TestStandService>();
-            services.AddScoped<IDataService, DataService>();
-            services.AddScoped<IAirQualityService, AirQualityService>();
+            services.AddScoped<IApiService, ApiService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

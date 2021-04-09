@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace AirStation.Models
+﻿namespace AirStation.Models
 {
     public class City
     {
-        public int Id { get; set; }
         public string Name { get; set; }
-        public Commune Commune { get; set; }
     }
 }
